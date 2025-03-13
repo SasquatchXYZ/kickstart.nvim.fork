@@ -63,7 +63,7 @@ return {
         -- "eyeliner",
         -- "fidget",
         -- "flash",
-        -- "gitsigns",
+        'gitsigns',
         'harpoon',
         -- "hop",
         -- "illuminate",
