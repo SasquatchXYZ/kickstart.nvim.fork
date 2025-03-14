@@ -45,13 +45,18 @@ return {
         },
         strings = { --[[ bold = true ]]
         },
-        keywords = { --[[ underline = true ]]
+        keywords = {
+          italic = true,
         },
         functions = { --[[ bold = true, undercurl = true ]]
         },
         variables = {},
-        operators = {},
-        types = {},
+        operators = {
+          italic = true,
+        },
+        types = {
+          italic = true,
+        },
       },
 
       plugins = { -- Uncomment the plugins that you use to highlight them
@@ -63,7 +68,7 @@ return {
         -- "eyeliner",
         -- "fidget",
         -- "flash",
-        -- "gitsigns",
+        'gitsigns',
         'harpoon',
         -- "hop",
         -- "illuminate",
