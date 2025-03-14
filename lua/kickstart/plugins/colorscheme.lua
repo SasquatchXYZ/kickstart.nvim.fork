@@ -1,28 +1,28 @@
 return {
-  '0xstepit/flow.nvim',
+  '2giosangmitom/nightfall.nvim',
   lazy = false,
   priority = 1000,
-  tag = 'v2.0.2',
-  config = function()
-    require('flow').setup {
-      theme = {
-        style = 'dark', --  "dark" | "light"
-        contrast = 'high', -- "default" | "high"
-        transparent = false, -- true | false
+  opts = {}, -- Add custom configuration here
+  config = function(_, opts)
+    require('nightfall').setup {
+      color_overrides = {
+        -- all = { foreground = '#ffffff' },
+        -- nightfall = { background = '#ff0000' },
       },
-      colors = {
-        mode = 'default', -- "default" | "dark" | "light"
-        fluo = 'pink', -- "pink" | "cyan" | "yellow" | "orange" | "green"
-        custom = {
-          saturation = '', -- "" | string representing an integer between 0 and 100
-          light = '', -- "" | string representing an integer between 0 and 100
+      highlight_overrides = {
+        all = {
+          -- Normal = { bg = '#120809' },
+        },
+        nightfall = function(colors)
+          return {
+            -- Normal = { bg = colors.black },
+          }
+        end,
+        maron = {
+          -- Normal = { fg = '#ffffff' },
         },
       },
-      ui = {
-        borders = 'inverse', -- "theme" | "inverse" | "fluo" | "none"
-        aggressive_spell = false, -- true | false
-      },
     }
-    vim.cmd 'colorscheme flow'
+    vim.cmd 'colorscheme nightfall' -- Choose from: nightfall, deeper-night, maron, nord
   end,
 }
