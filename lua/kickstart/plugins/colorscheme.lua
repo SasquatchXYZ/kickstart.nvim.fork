@@ -32,6 +32,7 @@ return {
           strings = 'NONE',
           types = 'NONE',
           variables = 'NONE',
+          preprocs = 'italic',
         },
         inverse = { -- Inverse highlight for different types
           match_paren = false,
