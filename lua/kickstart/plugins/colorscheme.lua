@@ -1,26 +1,47 @@
 return {
-  'tiagovla/tokyodark.nvim',
+  'navarasu/onedark.nvim',
   priority = 1000,
-  opts = {
-    transparent_background = false, -- set background to transparent
-    gamma = 1.00, -- adjust the brightness of the theme
-    styles = {
-      comments = { italic = true }, -- style for comments
-      keywords = { italic = true }, -- style for keywords, and Types in C#
-      identifiers = { italic = true }, -- style for identifiers
-      functions = {}, -- style for functions
-      variables = {}, -- style for variables
-    },
-    custom_highlights = {} or function(highlights, palette)
-      return {}
-    end, -- extend highlights
-    custom_palette = {} or function(palette)
-      return {}
-    end, -- extend palette
-    terminal_colors = true, -- enable terminal colors
-  },
-  config = function(_, opts)
-    require('tokyodark').setup(opts) -- calling setup is optional
-    vim.cmd [[colorscheme tokyodark]]
+  config = function()
+    require('onedark').setup {
+      -- Main options --
+      style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+      transparent = false, -- Show/hide background
+      term_colors = true, -- Change terminal color as per the selected theme style
+      ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+      cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+
+      -- toggle theme style ---
+      toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+      toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
+
+      -- Change code style ---
+      -- Options are italic, bold, underline, none
+      -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
+      code_style = {
+        comments = 'italic',
+        keywords = 'italic',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none',
+      },
+
+      -- Lualine options --
+      lualine = {
+        transparent = false, -- lualine center bar transparency
+      },
+
+      -- Custom Highlights --
+      colors = {}, -- Override default colors
+      highlights = {}, -- Override highlight groups
+
+      -- Plugins Config --
+      diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true, -- use undercurl instead of underline for diagnostics
+        background = true, -- use background color for virtual text
+      },
+    }
+    require('onedark').load()
+    -- vim.cmd 'colorscheme cyberdream'
   end,
 }
