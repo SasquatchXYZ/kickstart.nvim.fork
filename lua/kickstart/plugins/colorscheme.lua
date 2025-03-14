@@ -46,7 +46,7 @@ return {
         'harpoon',
         -- "hop",
         -- "illuminate",
-        -- "indent-blankline",
+        'indent-blankline',
         -- "lspsaga",
         'mini',
         -- "neogit",
