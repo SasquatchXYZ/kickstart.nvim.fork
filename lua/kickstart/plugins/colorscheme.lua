@@ -85,7 +85,92 @@ return {
 
       custom_colors = nil, -- If you want to override the default colors, set this to a function
 
-      custom_highlights = {}, -- Overwrite highlights with your own
+      -- Overwrite highlights with your own
+      custom_highlights = {
+        --------- Purple Italic ---------
+        --- `using` statement text
+        Macro = {
+          italic = true,
+          fg = '#C792EA',
+        },
+        --- Access modifiers text
+        ['@keyword'] = {
+          italic = true,
+          fg = '#C792EA',
+        },
+        --- `async/await` text
+        ['@keyword.coroutine'] = {
+          italic = true,
+          fg = '#C792EA',
+        },
+        --- `throw` text
+        Exception = {
+          italic = true,
+          fg = '#C792EA',
+        },
+        --- For Boolean text
+        ['@boolean.c_sharp'] = {
+          italic = true,
+          fg = '#C792EA',
+        },
+        --- `null` statement text
+        ['@constant.builtin'] = {
+          italic = true,
+          fg = '#C792EA',
+        },
+        --- `void` statement text
+        ['@type.builtin'] = {
+          italic = true,
+          fg = '#C792EA',
+        },
+
+        --- Yellow Class/'Main' Text ----
+        --- Class type text
+        ['@type'] = {
+          fg = '#FFCB6B',
+        },
+        --- Class Constructor textj
+        ['@constructor'] = {
+          fg = '#FFCB6B',
+        },
+        --- Attributes text
+        DiffChange = {
+          fg = '#FFCB6B',
+        },
+
+        --- White Propery/Member Text ---
+        --- Variable Member text
+        ['@variable.member'] = {
+          fg = '#EEFFFF',
+        },
+        --- Property text
+        ['@property'] = {
+          fg = '#EEFFFF',
+        },
+
+        ----- Various Other Colors ------
+        --- Variable Parameter text
+        Identifier = {
+          fg = '#F78C6C',
+        },
+        --- For TODO Comment text
+        ['@spell.c_sharp'] = {
+          fg = '#717CB4',
+          -- fg = '#FFEB95', -- Yellow color
+        },
+        -- CSPROJ/XML
+        ['@tag'] = {
+          fg = '#FFCB6B',
+        },
+        --- Include in CSPROJ
+        ['@tag.attribute'] = {
+          italic = true,
+          fg = '#FFCB6B',
+        },
+        ['@spell'] = {
+          fg = '#C3CEE3',
+        },
+      },
     }
 
     vim.g.material_style = 'deep ocean'
