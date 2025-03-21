@@ -171,12 +171,38 @@ vim.opt.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Center the cursor vertially when moving to the next word during a search
-vim.keymap.set('n', 'n', 'nzz')
-vim.keymap.set('n', 'N', 'Nzz')
-
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+
+-- Move highlighted blocks of text around
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Line append shenanigans
+vim.keymap.set('n', 'J', 'mzJ`z')
+
+-- Center the cursor when moving up and down by a page
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- Center the cursor vertially when moving to the next word during a search
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Greatest remap ever - delete highlighted word into the void register
+vim.keymap.set('x', '<leader>p', '"_dP')
+
+-- Copy to the system clipboard (y goes to vim regsiter, <leader>y goes to clipboard)
+vim.keymap.set('n', '<leader>y', '"+y')
+vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>Y', '"+Y')
+
+-- Deleteing to void register either in normal mode or visual mode
+vim.keymap.set('n', '<leader>d', '"_d')
+vim.keymap.set('v', '<leader>d', '"_d')
+
+-- Replace the word you are currently on
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
