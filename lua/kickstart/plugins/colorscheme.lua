@@ -147,10 +147,31 @@ return {
         ['@property'] = {
           fg = '#EEFFFF',
         },
+        --- White field text
+        ['@lsp.type.field.cs'] = {
+          fg = '#EEFFFF',
+        },
+        --- White variable text
+        ['@lsp.type.variable.cs'] = {
+          fg = '#EEFFFF',
+        },
 
         ----- Various Other Colors ------
-        --- Variable Parameter text
+        --- Interfaces
+        ['@lsp.type.interface.cs'] = {
+          italic = true,
+          fg = '#C3E88D',
+        },
+        --- Static methods
+        ['@lsp.mod.static.cs'] = {
+          italic = true,
+        },
+        --- Red Variable Parameter text
         Identifier = {
+          fg = '#F78C6C',
+        },
+        --- Red Variable Parameter text
+        ['@lsp.type.parameter.cs'] = {
           fg = '#F78C6C',
         },
         --- For TODO Comment text
