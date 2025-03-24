@@ -8,7 +8,7 @@ return {
 }
 ]]
 
-return {
+--[[return {
   'NeogitOrg/neogit',
   dependencies = {
     'nvim-lua/plenary.nvim', -- required
@@ -20,4 +20,28 @@ return {
     -- "echasnovski/mini.pick",         -- optional
   },
   config = true,
+}
+]]
+
+return {
+  'kdheepak/lazygit.nvim',
+  lazy = false,
+  cmd = {
+    'LazyGit',
+    'LazyGitConfig',
+    'LazyGitCurrentFile',
+    'LazyGitFilter',
+    'LazyGitFilterCurrentFile',
+  },
+  -- optional for floating window border decoration
+  dependencies = {
+    'nvim-telescope/telescope.nvim',
+    'nvim-lua/plenary.nvim',
+  },
+  --keys = {
+  --  { '<leader>lg', ':LazyGit<CR>', desc = 'LazyGit' },
+  --},
+  config = function()
+    require('telescope').load_extension 'lazygit'
+  end,
 }
