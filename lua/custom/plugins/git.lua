@@ -38,9 +38,9 @@ return {
     'nvim-telescope/telescope.nvim',
     'nvim-lua/plenary.nvim',
   },
-  --keys = {
-  --  { '<leader>lg', ':LazyGit<CR>', desc = 'LazyGit' },
-  --},
+  keys = {
+    { '<leader>lg', '<CMD>LazyGit<CR>', desc = 'LazyGit' },
+  },
   config = function()
     require('telescope').load_extension 'lazygit'
   end,
