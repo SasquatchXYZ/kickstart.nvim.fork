@@ -49,7 +49,7 @@ return {
         'indent-blankline',
         -- "lspsaga",
         'mini',
-        'neogit',
+        -- 'neogit',
         -- "neotest",
         -- "neo-tree",
         -- "neorg",
