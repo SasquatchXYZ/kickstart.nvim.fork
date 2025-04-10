@@ -174,6 +174,10 @@ return {
         ['@lsp.type.parameter.cs'] = {
           fg = '#F78C6C',
         },
+        --- Red Constant text
+        ['@lsp.type.constant.cs'] = {
+          fg = '#F78C6C',
+        },
         --- For TODO Comment text
         ['@spell.c_sharp'] = {
           fg = '#717CB4',
