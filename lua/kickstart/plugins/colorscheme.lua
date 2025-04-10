@@ -167,9 +167,9 @@ return {
           italic = true,
         },
         --- Red Variable Parameter text
-        Identifier = {
-          fg = '#F78C6C',
-        },
+        --Identifier = {
+        --  fg = '#F78C6C',
+        --},
         --- Red Variable Parameter text
         ['@lsp.type.parameter.cs'] = {
           fg = '#F78C6C',
